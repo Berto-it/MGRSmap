@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MGRSmap</string>
+    <string name="title_activity_gird_and_map">GirdAndMapActivity</string>
+</resources>

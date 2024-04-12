@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:circularflow_angles="20">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:context=".GridAndMapActivity" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/optionFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/white"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_settings"
+            tools:visibility="visible" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/backArrowFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/white"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_arrow_fw" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/colorMapFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:backgroundTint="@color/white"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_format_color_fill_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/gridOnOffFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:longClickable="true"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/optionFab"
+            app:srcCompat="@drawable/ic_grid_off" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab1M"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:longClickable="false"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/backArrowFab"
+            app:srcCompat="@drawable/ic_1_meter" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/mapTypeFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:longClickable="true"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/optionFab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_street" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab100M"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:longClickable="false"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/backArrowFab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_100_meters" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/gridSizeFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:longClickable="true"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/gridOnOffFab"
+            app:layout_constraintEnd_toStartOf="@+id/mapTypeFab"
+            app:srcCompat="@drawable/ic_grid_size" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab10M"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:longClickable="false"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/fab1M"
+            app:layout_constraintEnd_toStartOf="@+id/fab100M"
+            app:srcCompat="@drawable/ic_10_meters" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/zoomInFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:backgroundTint="@color/white"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/zoomOutFab"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_zoom_in" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/zoomOutFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:backgroundTint="@color/white"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_zoom_out" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab10Km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:backgroundTint="@color/white"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/fab10M"
+            app:layout_constraintEnd_toStartOf="@+id/fab100M"
+            app:srcCompat="@drawable/ic_10km" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab1Km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:backgroundTint="@color/white"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/fab1M"
+            app:layout_constraintEnd_toStartOf="@+id/fab10M"
+            app:srcCompat="@drawable/ic_1km" />
+
+        <TextView
+            android:id="@+id/userCords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#43000000"
+            android:elevation="4dp"
+            android:fontFamily="monospace"
+            android:padding="2dp"
+            android:textAlignment="textEnd"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/cameraCords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#43000000"
+            android:elevation="4dp"
+            android:fontFamily="monospace"
+            android:padding="2dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/userCords"
+            app:layout_constraintStart_toStartOf="@+id/userCords"
+            app:layout_constraintTop_toBottomOf="@+id/userCords" />
+
+
+        <ImageView
+            android:id="@+id/cameraCordsImage"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="#43000000"
+            app:layout_constraintBottom_toBottomOf="@+id/cameraCords"
+            app:layout_constraintEnd_toStartOf="@+id/cameraCords"
+            app:layout_constraintTop_toTopOf="@+id/cameraCords"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_camera" />
+
+        <ImageView
+            android:id="@+id/userCordsImage"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="#43000000"
+            app:layout_constraintBottom_toBottomOf="@+id/userCords"
+            app:layout_constraintEnd_toStartOf="@+id/userCords"
+            app:layout_constraintTop_toTopOf="@+id/userCords"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_person" />
+
+        <LinearLayout
+            android:id="@+id/followUserLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/switch_image_round_background"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/followUserImage"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/followUserSwitch"
+                app:layout_constraintEnd_toStartOf="@+id/followUserSwitch"
+                app:layout_constraintTop_toTopOf="@+id/followUserSwitch"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/baseline_camera_front_24" />
+
+            <Switch
+                android:id="@+id/followUserSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checked="false"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:checked="false" />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/recordDataButton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FF62AAFF"
+            android:scaleType="centerInside"
+            app:borderWidth="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/map"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_record_data" />
+
+        <Button
+            android:id="@+id/valueTypeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#FF62AAFF"
+            android:text="MOBILE"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:borderWidth="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/cooldownTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="75dp"
+            android:text=" "
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:background="#43000000"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/recordDataButton"
+            app:layout_constraintStart_toStartOf="@+id/recordDataButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+
